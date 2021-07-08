@@ -11,15 +11,11 @@ $ss = new session();
 $ss->StartSession();
 $httpProtocol = !isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != 'on' ? 'http' : 'https';
 $base = $httpProtocol.'://'.$_SERVER['HTTP_HOST']."/".'FlowerShop/';
+
 $vs = $db->getRow("SELECT AVG(vote_prd) AS star , count(id_cmt) as tt 
-                    FROM comments where id_prd=".$_GET['id_prd']." and id_prcmt=0");
-// $arr['star'] =$vs;
-// $ttcmt = $db->getRow("SELECT count(id_cmt) as count 
-// from comments where id_prd = ".$_GET['id_prd']." and id_prcmt=0");
-// $arr['star']['count']=$ttcmt;
+                    FROM comments where id_prd=".$_GET['id_prd']." AND id_prcmt=0");
+
  header('Content-Type: application/json');
- // echo json_encode(["flower"=> $db->getData($sql)]);
  echo json_encode($vs);
- // echo "from PHP";
     
  ?>

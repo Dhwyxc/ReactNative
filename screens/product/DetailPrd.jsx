@@ -300,7 +300,7 @@ return (
                                             {reply.created_at}
                                             </Text>
                                     </View>
-                                    )
+                                )
                     })}
             </View>)
             })}         

@@ -46,7 +46,6 @@ if(empty($username) || empty($password)){
                 "mess"=>"Đăng nhập thành công",
                 "username"=>$data["username"],
                 "id_user"=>$data["id_user"],
-                "role"=>$data["role"],
               ];
           }else{
             http_response_code(401);

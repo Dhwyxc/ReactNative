@@ -61,7 +61,7 @@ else
 				}
 			}else{
 				$check = (int)$qtyav["amount_prd"]-1;
-				if($check > 0){
+				if($check >= 0){
 					$ins_cartdt = "INSERT INTO `cart_details`(`id_cart`, `id_prd`, `prd_qty`) VALUES (".$haveid['id_cart'].",".$id_prd.",'1')";
 				$db->statement($ins_cartdt);
 				}else{
